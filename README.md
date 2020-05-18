@@ -1,4 +1,4 @@
-# cypress-example-docker-compose-included 
+# cypress-docker-compose
 
 See [docker-compose.yml](docker-compose.yml) file
 
