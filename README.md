@@ -1,4 +1,5 @@
 # cypress-docker-compose
+![project Logo](https://dev.azure.com/QADevCode/DevOpsPOC/_apis/build/status/Cypress-Docker-Pipeline)
 
 See [docker-compose.yml](docker-compose.yml) file
 
