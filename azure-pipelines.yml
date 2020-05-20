@@ -1,0 +1,20 @@
+name: 'Cypress Docker Compose'
+
+pool:
+  name: Azure Pipelines
+steps:
+- task: DockerCompose@0
+  displayName: 'Run a Docker Compose command'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: DockerHubConnection
+    dockerComposeFile: './docker-compose.yml'
+    dockerComposeCommand: 'run $(testing.browser)'
+
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results '
+  inputs:
+    testResultsFiles: '*.xml'
+    searchFolder: '$(System.DefaultWorkingDirectory)/cypress/reports/junit'
+    mergeTestResults: true
+    testRunTitle: 'Cypress Test Results'
